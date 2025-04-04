@@ -109,7 +109,7 @@ public class RecipeBookTest {
     }
 
     @Test
-    @Disabled("This test is intentionally failing due to incorrect assumption.")// يجب اضافة وصفة قبل حذفها
+    @Disabled("Bag:")// يجب اضافة وصفة قبل حذفها
     @DisplayName("Intentionally Failing Test")
     void testFailing() {
         assertNull(recipeBook.deleteRecipe(0));

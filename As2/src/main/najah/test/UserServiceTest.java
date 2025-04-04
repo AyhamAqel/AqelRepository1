@@ -74,7 +74,6 @@ public class UserServiceTest {
     @ParameterizedTest
     @Order(5)
     @DisplayName("Test Invalid Authentication")
-    @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
     @CsvFileSource(resources = "Test_invalid_auth.csv", numLinesToSkip = 1)
     void testInvalidAuthentication(String username, String password) {
         assertFalse(userService.authenticate(username, password));
@@ -83,6 +82,7 @@ public class UserServiceTest {
     @Test
     @Order(6)
     @DisplayName("Timeout Test for Authentication")
+    @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
     void testAuthenticationTimeout() {
         assertTrue(userService.authenticate("admin", "1234"));
     }

@@ -74,13 +74,13 @@ public class ProductTest {
 
     @Test
     @DisplayName("Test Get Final Price Without Discount")
-    @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
     void testGetFinalPriceWithoutDiscount() {
         assertEquals(1000.0, product.getFinalPrice());
     }
 
     @Test
-    @DisplayName("Timeout Test for Get Final Price")   
+    @DisplayName("Timeout Test for Get Final Price")  
+    @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
     void testGetFinalPriceTimeout() {
         assertEquals(1000.0, product.getFinalPrice());
     }
@@ -89,7 +89,7 @@ public class ProductTest {
     @Disabled("Bug:")
     @DisplayName("Intentionally Failing Test")
     @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
-    void failingTest() {                       // بس اشغلها برتفع الكافرج للنسبة المطلوبة
+    void failingTest() {                       // بس اشغلها برتفع الكافرج 
         product.applyDiscount(30);
         assertEquals(500, product.getFinalPrice()); // يجب أن يكون 700 وليس 500
     }

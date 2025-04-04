@@ -105,6 +105,7 @@ public class CalculatorTest {
     @Test
     @Order(9)
     @DisplayName("Timeout Test for Factorial")
+    @Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
     void testFactorialTimeout() {
         assertEquals(3628800, calc.factorial(10));
     }
